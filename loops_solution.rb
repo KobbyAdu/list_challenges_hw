@@ -144,10 +144,13 @@ end
 def count_code(string)
     i = 0
     count = 0
-    slice = 0
+    slice1 = 0
+    slice2 = 0
     (string.size - 2).times do |i|
-        slice = string[i.. i+3]
-        if slice == "code" 
+        slice1 = string[i.. i+1]
+        slice2 =string[i+3]
+
+        if slice1 == "co" && slice2 == "e" 
             count += 1
         end
         i += 1
@@ -156,7 +159,7 @@ def count_code(string)
 end
 
 
-puts count_code("cope code code")
+#puts count_code("copeeeeecodecode")
 
 
 def returnthree(list)  #threed
