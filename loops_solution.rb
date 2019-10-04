@@ -162,6 +162,51 @@ end
 #puts count_code("copeeeeecodecode")
 
 
+def get_sandwich(string)
+    i_min
+    i_max = 0
+    breadend
+    count = 0
+    (string.size - 4).times do |i|
+            if string[i.. i+4] == "bread"
+                count += 1
+                puts i
+                if i > i_max
+                    i_max = i
+
+            end
+        puts "#{string[i.. i +4]}"    
+       
+    end
+    puts "#{count}"
+end
+
+#puts get_sandwich("bread bread")
+
+def two_or_4(list)
+    count = 0
+    count2 = 0
+    (list.size - 1).times do |i|
+        if list[i] == 2 && list[i+1] == 2
+            count +=1
+        elsif list[i] == 4 && list[i+1] == 4
+            count2 += 1
+        end
+    end
+    end
+
+    puts count
+    if count == 1 && count2 == 0
+        return true
+    end
+end
+
+
+
+puts two_or_4([1,2,3,4,5,2,2,4])
+
+
+
 def returnthree(list)  #threed
     i = 0
     count = 0
