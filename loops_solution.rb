@@ -163,25 +163,24 @@ end
 
 
 def get_sandwich(string)
-    i_min = 1
-    i_max = 0
-    breadend
-    count = 0
+   seenbread = false  # haven't seen a bread string yet
+   stringstart = 0
+   stringend = 0
     (string.size - 4).times do |i|
             if string[i.. i+4] == "bread"
-                count += 1
-                    if i <= i_min
-                        i_min = i
+                    if seenbread == true # has bread been seen
+                        stringend = i - 1
+                    else 
+                        seenbread = true
+                        stringstart = i + 5
                     end
-            end
-        puts "#{string[count-1.. count + 3]}"  #last bread string  
-       
+            end 
+
     end
-    puts "#{string[i_min]}"
-    puts "#{string[i_min - 1.. count - 1]}"  #whats inbetween the bread
+    puts "#{string[stringstart.. stringend]}"  #whats inbetween the bread
 end
 
-#puts get_sandwich("bread bread")
+puts get_sandwich("breadloololoololobread")
 
 def two_or_4(list)
     count = 0
@@ -193,7 +192,6 @@ def two_or_4(list)
             count2 += 1
         end
     end
-    end
 
     puts count
     if count == 1 && count2 == 0
@@ -203,7 +201,7 @@ end
 
 
 
-puts two_or_4([1,2,3,4,5,2,2,4])
+#puts two_or_4([1,2,3,4,5,2,2,4])
 
 
 
