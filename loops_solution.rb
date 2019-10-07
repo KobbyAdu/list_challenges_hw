@@ -163,22 +163,22 @@ end
 
 
 def get_sandwich(string)
-    i_min
+    i_min = 1
     i_max = 0
     breadend
     count = 0
     (string.size - 4).times do |i|
             if string[i.. i+4] == "bread"
                 count += 1
-                puts i
-                if i > i_max
-                    i_max = i
-
+                    if i <= i_min
+                        i_min = i
+                    end
             end
-        puts "#{string[i.. i +4]}"    
+        puts "#{string[count-1.. count + 3]}"  #last bread string  
        
     end
-    puts "#{count}"
+    puts "#{string[i_min]}"
+    puts "#{string[i_min - 1.. count - 1]}"  #whats inbetween the bread
 end
 
 #puts get_sandwich("bread bread")
